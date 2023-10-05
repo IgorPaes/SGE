@@ -1,0 +1,74 @@
+@import url('../components/variables.css');
+
+body {
+
+    position: relative;
+    margin: 0;
+
+}
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    line-height: normal;
+    font-weight: 400;
+    
+}
+
+.Container_XL {
+
+    content: "";
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient();
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    color: var(--white-color);
+    position: relative;
+    user-select: none;
+    overflow: hidden;
+    z-index: 1;
+    
+}
+
+/* ----------------- SCROLL ----------------- */
+
+*::-webkit-scrollbar {
+
+    width: 4px;
+
+}
+
+/* ------------------ RESET ------------------ */
+
+input, button, textarea {
+
+    all: unset;
+    box-sizing: border-box;
+
+}
+
+button {
+
+    transition: var(--transition-time);
+    cursor: pointer;
+
+}
+
+/* -------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------------------- */
