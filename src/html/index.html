@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Inventory Manager</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="../js/index.js" defer></script>
 </head>
 <body>
     <section style="display: none;">
@@ -1018,32 +1022,31 @@
                 </div>
             </section>
 
-
            <!-- Tela de Fornecedor --> 
             <section>
                 <div>
                     <div>
-                        <h3>Total de Fornecedores/h3>
-                        <span>15.802</span>
-                    </div>
-                    <div>
-                        <h3>Destaque Fornecedores</h3>
                         <div>
-                            <img src="" alt="">
-                            <img src="" alt="">
-                            <img src="" alt="">
-                            <img src="" alt="">
-                            <img src="" alt="">
+                            <h3>Total de Fornecedores</h3>
+                            <span>15.802</span>
+                        </div>
+                        <div>
+                            <h3>Destaque Fornecedores</h3>
+                            <div>
+                                <img src="" alt="">
+                                <img src="" alt="">
+                                <img src="" alt="">
+                                <img src="" alt="">
+                                <img src="" alt="">
+                            </div>
                         </div>
                     </div>
-                    <div>
-                        <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
-                                <path d="M2 8H12M7 3V13" stroke="#8C75FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <h3>Adicionar Fornecedor</h3>
-                        </button>
-                    </div>
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
+                            <path d="M2 8H12M7 3V13" stroke="#8C75FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <h3>Adicionar Fornecedor</h3>
+                    </button>
                 </div>
                 <ul>
                     <div>
@@ -1058,7 +1061,6 @@
                             <img src="" alt="">
                             <span>Guilherme Aizawa</span>
                         </div>
-                        
                         <div>
                             <span>10</span>
                         </div>
@@ -1121,7 +1123,6 @@
                             </button>
                         </div>
                     </li>
-
                     <li>
                         <div>
                             <img src="" alt="">
@@ -1163,33 +1164,39 @@
                             </svg>
                         </button>
                         <section>
-                            <h1>Detalhes Do Fornecedores</h1>
                             <div>
-                                <h3>Nome do Fornecedor:</h3>
-                                <h3>Data de criação:</h3>
-                                <h3>ID:</h3>
-                                <h3>Site:</h3>
+                                <h1>Detalhes Do Fornecedores</h1>
                             </div>
                             <div>
-                                <h3>CNPJ:</h3>
-                                <h3>Telefone:</h3>
-                                <h3>E-mail:</h3>
-                                <h3>Área De Atuação:</h3>
+                                <div>
+                                    <h3>Nome do Fornecedor:</h3>
+                                    <h3>Data de criação:</h3>
+                                    <h3>ID:</h3>
+                                    <h3>Site:</h3>
+                                </div>
+                                <div>
+                                    <span>Mega Company</span>
+                                    <span>16/09/2023</span>
+                                    <span>70</span>
+                                    <link rel="stylesheet" href="">
+                                </div>
                             </div>
                             <div>
-                                <span>Mega Company</span>
-                                <span>16/09/2023</span>
-                                <span>70</span>
-                                <link rel="stylesheet" href="">
-                            </div>
-                            <div>
-                                <span>XX.XXX.XXX/0001-XX</span>
-                                <span>(11) 94050-7353</span>
-                                <span>guilhermeaizawa@gmail.com</span>
+                                <div>
+                                    <h3>CNPJ:</h3>
+                                    <h3>Telefone:</h3>
+                                    <h3>E-mail:</h3>
+                                    <h3>Área De Atuação:</h3>
+                                </div>
+                                <div>
+                                    <span>XX.XXX.XXX/0001-XX</span>
+                                    <span>(11) 94050-7353</span>
+                                    <span>guilhermeaizawa@gmail.com</span>
+                                </div>
                             </div>
                         </section>
                     </div>
-                    
+                </ul>
             </section>
 
             <!-- Tela para adicionar fornecedor --> 
@@ -1243,9 +1250,7 @@
                                 <span>CNPJ</span>
                             </div>
                             <div>
-                                <div>
-                                    <input type="text" name="CNPJ" id="">
-                                </div>
+                                <input type="text" name="CNPJ" id="">
                             </div>
                         </div>
                         <div>
@@ -1254,9 +1259,7 @@
                                 <span>Nome do responsável</span>
                             </div>
                             <div>
-                                <div>
-                                    <input type="text" name="responsável" id="">
-                                </div>
+                                <input type="text" name="responsável" id="">
                             </div>
                         </div>
                         <div>
@@ -1264,11 +1267,9 @@
                                 <div></div>
                                 <span>Telefone</span>
                             </div>
-                            
                             <div>
                                 <input type="text" name="telefone" id="">
-                            </div>
-                                       
+                            </div>    
                         </div>
                         <div>
                             <div>
@@ -1316,31 +1317,31 @@
                 </div>
             </section>
 
-        <!-- Tela de Usuário -->
+            <!-- Tela de Usuário -->
             <section>
                 <div>
                     <div>
-                        <h3>Total de Usuários</h3>
-                        <span>200</span>
-                    </div>
-                    <div>
-                        <h3>Destaque Usuários</h3>
                         <div>
-                            <img src="" alt="">
-                            <img src="" alt="">
-                            <img src="" alt="">
-                            <img src="" alt="">
-                            <img src="" alt="">
+                            <h3>Total de Usuários</h3>
+                            <span>200</span>
+                        </div>
+                        <div>
+                            <h3>Destaque Usuários</h3>
+                            <div>
+                                <img src="" alt="">
+                                <img src="" alt="">
+                                <img src="" alt="">
+                                <img src="" alt="">
+                                <img src="" alt="">
+                            </div>
                         </div>
                     </div>
-                    <div>
-                        <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
-                                <path d="M2 8H12M7 3V13" stroke="#8C75FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <h3>Adicionar Usuários</h3>
-                        </button>
-                    </div>
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
+                            <path d="M2 8H12M7 3V13" stroke="#8C75FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <h3>Adicionar Usuários</h3>
+                    </button>
                 </div>
                 <ul>
                     <div>
@@ -1418,7 +1419,6 @@
                             </button>
                         </div>
                     </li>
-
                     <li>
                         <div>
                             <img src="" alt="">
@@ -1460,33 +1460,40 @@
                             </svg>
                         </button>
                         <section>
-                            <h1>Detalhes Do Usuário</h1>
                             <div>
-                                <h3>Nome do Usuário:</h3>
-                                <h3>Data de criação:</h3>
-                                <h3>ID:</h3>
-                                <h3>RG:</h3>
+                                <h1>Detalhes Do Usuário</h1>
                             </div>
                             <div>
-                                <h3>CPF:</h3>
-                                <h3>Telefone:</h3>
-                                <h3>E-mail:</h3>
-                                <h3>Área De Atuação:</h3>
+                                <div>
+                                    <h3>Nome do Usuário:</h3>
+                                    <h3>Data de criação:</h3>
+                                    <h3>ID:</h3>
+                                    <h3>RG:</h3>
+                                </div>
+                                <div>
+                                    <span>Guilherme Aizawa</span>
+                                    <span>16/09/2023</span>
+                                    <span>10</span>
+                                    <span>XX.XXX.XXX-3</span>
+                                </div>
                             </div>
                             <div>
-                                <span>Guilherme Aizawa</span>
-                                <span>16/09/2023</span>
-                                <span>10</span>
-                                <span>XX.XXX.XXX-3</span>
-                            </div>
-                            <div>
-                                <span>XXX.XXX.XXX-97</span>
-                                <span>(11) 94050-7353</span>
-                                <span>guilhermeaizawa@gmail.com</span>
-                                <span>Balconista</span>
+                                <div>
+                                    <h3>CPF:</h3>
+                                    <h3>Telefone:</h3>
+                                    <h3>E-mail:</h3>
+                                    <h3>Área De Atuação:</h3>
+                                </div>
+                                <div>
+                                    <span>XXX.XXX.XXX-97</span>
+                                    <span>(11) 94050-7353</span>
+                                    <span>guilhermeaizawa@gmail.com</span>
+                                    <span>Balconista</span>
+                                </div>
                             </div>
                         </section>
                     </div>
+                </ul>
             </section>
 
             <!-- Tela para adicionar Usuário --> 
@@ -1540,9 +1547,7 @@
                                 <span>CPF</span>
                             </div>
                             <div>
-                                <div>
-                                    <input type="text" name="CPF" id="">
-                                </div>
+                                <input type="text" name="CPF" id="">
                             </div>
                         </div>
                         <div>
@@ -1551,9 +1556,7 @@
                                 <span>Nome do Chefe</span>
                             </div>
                             <div>
-                                <div>
-                                    <input type="text" name="Chefe" id="">
-                                </div>
+                                <input type="text" name="Chefe" id="">
                             </div>
                         </div>
                         <div>
@@ -1611,13 +1614,7 @@
                         Adicionar Novo
                     </button>
                 </div>
-            </section>
-
-            <section>
-
-            </section>
-
-            
+            </section>            
         </main>
     </section>
 </body>
