@@ -5,39 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Inventory Manager</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
     
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style/style.css">
     <script type="text/javascript" src="../js/index.js" defer></script>
 </head>
 <body>
-    <section style="display: none;">
-        <section>
+    <section style="display: block;">
+        <section class="container_cadastro_login">
             <!-- Tela de cadastro -->
-            <main>
-                <header>
-                    <h1>Cadastrar</h1>
-                </header>
-                <section>
-                    <div>
-                        <input type="text" placeholder="Nome Completo">
-                    </div>
-                    <div>
-                        <input type="email" placeholder="E-mail">
-                    </div>
-                    <div>
-                        <input type="password" placeholder="Senha">
-                    </div>
-                    <div>
-                        <input type="text" placeholder="Cpf">
-                    </div>
-                </section> 
-                <nav>
-                    <button>Cadastrar</button>
-                    <button>Voltar para login</button>
-                </nav>  
+            <main class="bloco_telas_iniciais">
+                <div class="container_inicial">
+                    <header class="Titulo">
+                        <h1>Cadastrar</h1>
+                    </header>
+                    <section class="bloco_inputs_inicial">
+                        <div class="estilo_input_inicial">
+                            <input type="text" placeholder="Nome Completo">
+                        </div>
+                        <div class="estilo_input_inicial">
+                            <input type="email" placeholder="E-mail">
+                        </div>
+                        <div class="estilo_input_inicial">
+                            <input type="password" placeholder="Senha">
+                        </div>
+                        <div class="estilo_input_inicial">
+                            <input type="text" placeholder="Cpf">
+                        </div>
+                    </section> 
+                    <nav class="bloco_botoes_inicial">
+                        <button class="btn_inicial">Cadastrar</button>
+                        <a href="" class="btn_complementar">Voltar para login</a>
+                    </nav>  
+                </div>
             </main>
+            
             <!-- Tela de login -->
-            <main>
+            <main style="display: none;">
                 <header>
                     <h1>Login</h1>
                 </header>
@@ -66,7 +74,7 @@
         </section>
         
         <!-- Tela de redefinir senha -->
-        <section>
+        <section style="display: none;">
             <main>
                 <button>
                     <svg xmlns="http://www.w3.org/2000/svg" width="33" height="30" viewBox="0 0 33 30" fill="none">
@@ -79,7 +87,7 @@
         </section>
     </section>
 
-    <section>
+    <section style="display: none;">
         <header>
             <nav>
                 <div>
@@ -789,7 +797,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
                                     <path d="M1.71436 6.93343H10.2858M6.00007 2.6001V11.2668" stroke="#8C75FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                               Adicionar alterações
+                                Adicionar alterações
                             </button>
                         </div>
                     </li>
@@ -1178,7 +1186,7 @@
                                     <span>Mega Company</span>
                                     <span>16/09/2023</span>
                                     <span>70</span>
-                                    <link rel="stylesheet" href="">
+                                    <a href="">megacompany.com.br</a>
                                 </div>
                             </div>
                             <div>
