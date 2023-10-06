@@ -39,50 +39,50 @@
                     </section> 
                     <nav class="bloco_botoes_inicial">
                         <button class="btn_inicial">Cadastrar</button>
-                        <a href="" class="btn_complementar">Voltar para login</a>
+                        <button onclick="btnPageLogin()" class="btn_complementar">Voltar para login</button>
                     </nav>  
                 </div>
             </main>
             
             <!-- Tela de login -->
-            <main style="display: none;">
-                <header>
-                    <h1>Login</h1>
-                </header>
-                <section>
-                    <div>
-                        <input type="email" placeholder="E-mail">
-                    </div>
-                    <div>
-                        <input type="password" placeholder="Senha">
-                    </div>
-                    <div>
-                        <div>
-                            <input type="checkbox" name="">
-                            <label for="">sfdaffsa</label>
+            <main class="bloco_telas_iniciais">
+                <div class="container_inicial">
+                    <header class="Titulo">
+                        <h1>Login</h1>
+                    </header>
+                    <section class="bloco_inputs_inicial">
+                        <div class="estilo_input_inicial">
+                            <input type="email" placeholder="E-mail">
                         </div>
-                        <div>
-                            <button>Esqueci minha senha?</button>
+                        <div class="estilo_input_inicial">
+                            <input type="password" placeholder="Senha">
                         </div>
-                    </div>
-                </section> 
-                <nav>
-                    <button>Entrar</button>
-                    <button>Fazer cadastro</button>
-                </nav>  
-            </main>
-        </section>
+                        <div class="btns_comp_login">
+                            <div class="manter_log">
+                                <input type="checkbox" name="Ml">
+                                <label for="Ml">Manter Logado</label>
+                            </div>
+                            <div class="btn_esqueci_pass">
+                                <button>Esqueci minha senha?</button>
+                            </div>
+                        </div>
+                    </section> 
+                    <nav class="bloco_botoes_inicial">
+                        <button class="btn_inicial">Entrar</button>
+                        <button class="btn_complementar">Fazer cadastro</button>
+                    </nav>  
+                </div>
         
-        <!-- Tela de redefinir senha -->
-        <section style="display: none;">
-            <main>
-                <button>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="30" viewBox="0 0 33 30" fill="none">
-                        <line y1="-1.5" x2="40.628" y2="-1.5" transform="matrix(0.730291 0.683136 -0.728609 0.684929 0 2.24554)" stroke="#373D44" stroke-width="3"/>
-                        <line y1="-1.5" x2="40.6572" y2="-1.5" transform="matrix(-0.737876 0.674936 -0.790052 -0.613039 30 0)" stroke="#373D44" stroke-width="3"/>
-                    </svg>
-                </button>
-                <p>Entre em contato com algum administrador para redefinir sua senha.</p>  
+                <!-- Tela de redefinir senha -->
+                <div class="balao_tela_inicial" style="display: none;">
+                    <button class="btn_fechar_balao">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 33 30" fill="none">
+                            <line y1="-1.5" x2="40.628" y2="-1.5" transform="matrix(0.730291 0.683136 -0.728609 0.684929 0 2.24554)" stroke="#373D44" stroke-width="3"/>
+                            <line y1="-1.5" x2="40.6572" y2="-1.5" transform="matrix(-0.737876 0.674936 -0.790052 -0.613039 30 0)" stroke="#373D44" stroke-width="3"/>
+                        </svg>
+                    </button>
+                    <p>Entre em contato com algum administrador para redefinir sua senha.</p>  
+                </div>
             </main>
         </section>
     </section>
