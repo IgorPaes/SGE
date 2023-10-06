@@ -25,21 +25,21 @@
                     </header>
                     <section class="bloco_inputs_inicial">
                         <div class="estilo_input_inicial">
-                            <input type="text" placeholder="Nome Completo">
+                            <input id="nomeCadastro" type="text" placeholder="Nome Completo">
                         </div>
                         <div class="estilo_input_inicial">
-                            <input type="email" placeholder="E-mail">
+                            <input id="emailCadastro" type="email" placeholder="E-mail">
                         </div>
                         <div class="estilo_input_inicial">
-                            <input type="password" placeholder="Senha">
+                            <input id="senhaCadastro" type="password" placeholder="Senha">
                         </div>
                         <div class="estilo_input_inicial">
-                            <input type="text" placeholder="Cpf">
+                            <input id="cpfCadastro" type="text" placeholder="Cpf">
                         </div>
                     </section> 
                     <nav class="bloco_botoes_inicial">
-                        <button class="btn_inicial">Cadastrar</button>
-                        <button onclick="btnPageLogin()" class="btn_complementar">Voltar para login</button>
+                        <button onclick="btnCadastrar()" class="btn_inicial">Cadastrar</button>
+                        <!-- <button class="btn_complementar">Voltar para login</button> -->
                     </nav>  
                 </div>
             </main>
@@ -52,12 +52,12 @@
                     </header>
                     <section class="bloco_inputs_inicial">
                         <div class="estilo_input_inicial">
-                            <input type="email" placeholder="E-mail">
+                            <input id="emailLogar" type="email" placeholder="E-mail">
                         </div>
                         <div class="estilo_input_inicial">
-                            <input type="password" placeholder="Senha">
+                            <input id="senhaLogar" type="password" placeholder="Senha">
                         </div>
-                        <div class="btns_comp_login">
+                        <!-- <div class="btns_comp_login">
                             <div class="manter_log">
                                 <input type="checkbox" name="Ml">
                                 <label for="Ml">Manter Logado</label>
@@ -65,11 +65,11 @@
                             <div class="btn_esqueci_pass">
                                 <button>Esqueci minha senha?</button>
                             </div>
-                        </div>
+                        </div> -->
                     </section> 
                     <nav class="bloco_botoes_inicial">
-                        <button class="btn_inicial">Entrar</button>
-                        <button class="btn_complementar">Fazer cadastro</button>
+                        <button onclick="btnLogar()" class="btn_inicial">Entrar</button>
+                        <!-- <button class="btn_complementar">Fazer cadastro</button> -->
                     </nav>  
                 </div>
         
