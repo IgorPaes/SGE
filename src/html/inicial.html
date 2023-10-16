@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Paginas iniciais</title>
+
+    <link rel="stylesheet" href="../style/inicial.css">
+    <link rel="stylesheet" href="../style/components/variables.css">
+    <script type="text/javascript" src="../js/index.js" defer></script>
+</head>
+<body>
+    <section class="container_cadastro_login">
+        <!-- Tela de cadastro -->
+        <main class="bloco_telas_iniciais" id="tela_cadastro" style="display: none;">
+            <div class="container_inicial">
+                <header class="Titulo">
+                    <h1>Cadastrar</h1>
+                </header>
+                <section class="bloco_inputs_inicial">
+                    <div class="estilo_input_inicial" id="InputTCadastro">
+                        <input id="nomeCadastro" type="text" placeholder="Nome Completo">
+                    </div>
+                    <div class="estilo_input_inicial" id="InputTCadastro">
+                        <input id="emailCadastro" type="email" placeholder="E-mail">
+                    </div>
+                    <div class="estilo_input_inicial" id="InputTCadastro">
+                        <input id="senhaCadastro" type="password" placeholder="Senha">
+                    </div>
+                    <div class="estilo_input_inicial" id="InputTCadastro">
+                        <input id="cpfCadastro" type="text" placeholder="Cpf">
+                    </div>
+                </section> 
+                <nav class="bloco_botoes_inicial">
+                    <button onclick="btnCadastrar()" class="btn_inicial">Cadastrar</button>
+                    <button onclick="irLogin()" class="btn_complementar">Voltar para login</button>
+                </nav>  
+            </div>
+        </main>
+        
+        <!-- Tela de login -->
+        <main class="bloco_telas_iniciais" id="tela_login">
+            <div class="container_inicial">
+                <header class="Titulo">
+                    <h1>Login</h1>
+                </header>
+                <section class="bloco_inputs_inicial">
+                    <div class="estilo_input_inicial" id="InputTLogin">
+                        <input id="emailLogar" type="email" placeholder="E-mail">
+                    </div>
+                    <div class="estilo_input_inicial" id="InputTLogin">
+                        <input id="senhaLogar" type="password" placeholder="Senha">
+                    </div>
+                    <!-- <div class="btns_comp_login">
+                        <div class="manter_log">
+                            <input type="checkbox" name="Ml">
+                            <label for="Ml">Manter Logado</label>
+                        </div>
+                        <div class="btn_esqueci_pass">
+                            <button>Esqueci minha senha?</button>
+                        </div>
+                    </div> -->
+                </section> 
+                <nav class="bloco_botoes_inicial">
+                    <button onclick="btnLogar()" class="btn_inicial">Entrar</button>
+                    <button onclick="irCadastro()" class="btn_complementar">Fazer cadastro</button>
+                </nav>  
+            </div>
+    
+            <!-- Tela de redefinir senha -->
+            <div class="balao_tela_inicial" style="display: none;">
+                <button class="btn_fechar_balao">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 33 30" fill="none">
+                        <line y1="-1.5" x2="40.628" y2="-1.5" transform="matrix(0.730291 0.683136 -0.728609 0.684929 0 2.24554)" stroke="#373D44" stroke-width="3"/>
+                        <line y1="-1.5" x2="40.6572" y2="-1.5" transform="matrix(-0.737876 0.674936 -0.790052 -0.613039 30 0)" stroke="#373D44" stroke-width="3"/>
+                    </svg>
+                </button>
+                <p>Entre em contato com algum administrador para redefinir sua senha.</p>  
+            </div>
+        </main>
+    </section>
+</body>
