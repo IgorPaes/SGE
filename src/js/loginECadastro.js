@@ -1,4 +1,5 @@
 import { validarLogin } from './validarUsuario.js';
+import { Usuario, Infos } from './Usuario.js';
 
 const btnCadastrarObj = document.getElementById('btnCadastrar');
 const irLoginObj = document.getElementById('irLogin');
@@ -13,18 +14,29 @@ irCadastroObj.addEventListener('click', irCadastro);
 const cpfInput = document.getElementById('cpfCadastro');
 cpfInput.addEventListener('input', atualizarCampoCPF);
 
+const InfosRecebidas = new Usuario(new Infos());
+
 function btnCadastrar() {
 
-    let nome = document.querySelector('#nomeCadastro');
-    let email = document.querySelector('#emailCadastro');
-    let senha = document.querySelector('#senhaCadastro');
-    let cpf = document.querySelector('#cpfCadastro');
+    const nome = document.querySelector('#nomeCadastro');
+    const email = document.querySelector('#emailCadastro');
+    const senha = document.querySelector('#senhaCadastro');
+    const cpf = document.querySelector('#cpfCadastro');
 
-    let infosUser = [nome.value, email.value, senha.value, cpf.value];
+    let valorNome = nome.value;
+    let valorEmail = email.value;
+    let valorSenha = senha.value;
+    let valorCpf = cpf.value;
+
+    InfosRecebidas.infos = new Infos(valorNome, valorCpf);
+    InfosRecebidas.senha = valorSenha;
+    InfosRecebidas.email = valorEmail;
+
+    let infosUser = [valorNome, valorEmail, valorSenha, valorCpf];
 
     const inputsAlterarEstiloCadastroAll = document.querySelectorAll('#InputTCadastro'); 
 
-    if(checkInputs(infosUser, inputsAlterarEstiloCadastroAll, 1) && validarLogin()) {
+    if(checkInputs(infosUser, inputsAlterarEstiloCadastroAll, 1)) {
 
         nome.value = "";
         email.value = "";
@@ -50,13 +62,16 @@ function cadastrado() {
 
 function btnEntrar() {
 
-    let email = document.querySelector('#emailLogar');
-    let senha = document.querySelector('#senhaLogar');
+    const email = document.querySelector('#emailLogar');
+    const senha = document.querySelector('#senhaLogar');
+
+    const valorEmail = email.value;
+    const valorSenha = senha.value;
 
     let infosUser = [email.value, senha.value];
     const inputsAlterarEstiloLoginAll = document.querySelectorAll('#InputTLogin'); 
 
-    if(checkInputs(infosUser, inputsAlterarEstiloLoginAll, 2)) {
+    if(checkInputs(infosUser, inputsAlterarEstiloLoginAll, 2) && validarLogin(InfosRecebidas, valorEmail, valorSenha)) {
     
         email.value = "";
         senha.value = "";
@@ -227,30 +242,5 @@ function verificarInputTamanhoCpf(inputCPF, AlterarEstilo) {
         AlterarEstilo.style.borderColor = "#3A4149";
         return true;
     }
-
-}
-
-function authLogin(emailLogin, senhaLogin) {
-
-    const authEmail = emailLogin.value == infosUser[1] ? true : false;
-    const authSenha = senhaLogin.value == infosUser[2] ? true : false;
-
-    const authFull = authEmail && authSenha ? true : false;
-
-    return authFull;
-}
-
-function mostrarCampoPersonalizado(selectElement) {
-  
-    const campoPersonalizado = document.getElementById('campoPersonalizado');
-  const frutaPersonalizadaInput = document.getElementById('frutaPersonalizada');
-
-  if (selectElement.value === 'personalizado') {
-    campoPersonalizado.style.display = 'block';
-    frutaPersonalizadaInput.required = true;
-  } else {
-    campoPersonalizado.style.display = 'none';
-    frutaPersonalizadaInput.required = false;
-  }
 
 }
