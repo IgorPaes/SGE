@@ -1,5 +1,5 @@
 import { validarLogin } from './validarUsuario.js';
-import { Usuario, Infos } from './Usuario.js';
+import { Usuario, InfosUsuario } from './Usuario.js';
 
 const btnCadastrarObj = document.getElementById('btnCadastrar');
 const irLoginObj = document.getElementById('irLogin');
@@ -14,7 +14,7 @@ irCadastroObj.addEventListener('click', irCadastro);
 const cpfInput = document.getElementById('cpfCadastro');
 cpfInput.addEventListener('input', atualizarCampoCPF);
 
-const InfosRecebidas = new Usuario(new Infos());
+const InfosRecebidas = new Usuario(new InfosUsuario());
 
 function btnCadastrar() {
 
@@ -28,7 +28,7 @@ function btnCadastrar() {
     let valorSenha = senha.value;
     let valorCpf = cpf.value;
 
-    InfosRecebidas.infos = new Infos(valorNome, valorCpf);
+    InfosRecebidas.infos = new InfosUsuario(valorNome, valorCpf);
     InfosRecebidas.senha = valorSenha;
     InfosRecebidas.email = valorEmail;
 
