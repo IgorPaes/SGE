@@ -1,46 +1,60 @@
 export class Usuario {
+    
+    #classInfos;
+    #senha;
+    #email;
 
-    constructor(infos = new Infos(nome, cpf), senha, email) {
-        this.classInfos = infos;
-        this._senha = senha;
-        this._email = email;
+    constructor(infos = new InfosUsuario(nome, cpf), senha, email) {
+        this.#classInfos = infos;
+        this.#senha = senha;
+        this.#email = email;
     }
 
     get senha() {
-        return this._senha;
+        return this.#senha;
     }
     set senha(value) {
-        this._senha = value;
+        this.#senha = value;
     }
 
     get email() {
-        return this._email;
+        return this.#email;
     }
     set email(value) {
-        this._email = value;
+        this.#email = value;
+    }
+
+    get classInfos() {
+        return this.#classInfos;
+    }
+    set classInfos(value) {
+        this.#classInfos = value;
     }
 
 }
 
-export class Infos {
+export class InfosUsuario {
+
+    #nome;
+    #cpf;
 
     constructor(nome, cpf) {
-        this._nome = nome;
-        this._cpf = cpf;
+        this.#nome = nome;
+        this.#cpf = cpf;
     }
 
     get nome() {
-        return this._nome;
+        return this.#nome;
     }
     set nome(value) {
-        this._nome = value;
+        this.#nome = value;
     }
     
     get cpf() {
-        return this._cpf;
+        return this.#cpf;
     }
     set cpf(value) {
-        this._cpf = value;
+        this.#cpf = value;
     }
 
 }
