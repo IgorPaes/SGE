@@ -5,9 +5,11 @@ export class Usuario {
     #email;
 
     constructor(infos = new InfosUsuario(nome, cpf), senha, email) {
+    
         this.#classInfos = infos;
         this.#senha = senha;
         this.#email = email;
+    
     }
 
     get senha() {
@@ -39,8 +41,10 @@ export class InfosUsuario {
     #cpf;
 
     constructor(nome, cpf) {
+
         this.#nome = nome;
         this.#cpf = cpf;
+    
     }
 
     get nome() {
