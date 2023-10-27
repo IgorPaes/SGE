@@ -1,20 +1,66 @@
-import { validarLogin } from './validarUsuario.js';
+import checkInputs from './validarInputs.js';
 import { Usuario, InfosUsuario } from './Usuario.js';
 
 const btnCadastrarObj = document.getElementById('btnCadastrar');
-const irLoginObj = document.getElementById('irLogin');
 const btnEntrarObj = document.getElementById('btnEntrar');
-const irCadastroObj = document.getElementById('irCadastro');
+const btnLoginObj = document.getElementById('irLogin');
+const btnCadastroObj = document.getElementById('irCadastro');
+const btnEsqueciSenhaObj = document.getElementById('irEsqueceuSenha');
+const btnFecharObj = document.getElementById('fechar');
+
+const btnOlhoFechado = document.querySelector('#olho_fechado_login');
+const olhoAberto = document.querySelector('#olho_aberto_login');
+btnOlhoFechado.addEventListener('click', function() {
+    btnOcultarSenha('#senhaLogar');
+    btnOlhoFechado.style = 'display: none;';
+    olhoAberto.style = 'display: block;';
+});
+olhoAberto.addEventListener('click', function() {
+    btnDesocultarSenha('#senhaLogar');
+    olhoAberto.style = 'display: none;';
+    btnOlhoFechado.style = 'display: block;';
+});
+
+const btnOlhoFechadoDois = document.querySelector('#olho_fechado_cadastro');
+const btnOlhoAbertoDois = document.querySelector('#olho_aberto_cadastro');
+btnOlhoFechadoDois.addEventListener('click', function() {
+    btnOcultarSenha('#senhaCadastro');
+    btnOlhoAbertoDois.style = 'display: block;';
+    btnOlhoFechadoDois.style = 'display: none;';
+});
+btnOlhoAbertoDois.addEventListener('click', function() {
+    btnDesocultarSenha('#senhaCadastro');
+    btnOlhoAbertoDois.style = 'display: none;';
+    btnOlhoFechadoDois.style = 'display: block;';
+});
 
 btnCadastrarObj.addEventListener('click', btnCadastrar);
-irLoginObj.addEventListener('click', irLogin);
 btnEntrarObj.addEventListener('click', btnEntrar);
-irCadastroObj.addEventListener('click', irCadastro);
+btnLoginObj.addEventListener('click', irLogin);
+btnCadastroObj.addEventListener('click', irCadastro);
+btnEsqueciSenhaObj.addEventListener('click', irEsqueceuSenha);
 
-const cpfInput = document.getElementById('cpfCadastro');
-cpfInput.addEventListener('input', atualizarCampoCPF);
+btnFecharObj.addEventListener('click', function() {
+    fecharTela('#balao_esqueceu_senha');
+});
 
 const InfosRecebidas = new Usuario(new InfosUsuario());
+
+function btnOcultarSenha(inputSenha){
+
+    const inputPassword = document.querySelector(`${inputSenha}`);
+
+    inputPassword.setAttribute('type','text');
+
+}
+
+function btnDesocultarSenha(inputSenha){
+
+    const inputPassword = document.querySelector(`${inputSenha}`);
+    
+    inputPassword.setAttribute('type','password');
+
+}
 
 function btnCadastrar() {
 
@@ -47,15 +93,10 @@ function btnCadastrar() {
     }
     
 }
-
+cadastrado();
 function cadastrado() {
     
-    let notifyInicial = document.querySelector('#on_of_notify');
-    notifyInicial.style = "display: flex;";
-
-    setTimeout(function () {
-        notifyInicial.style = "display: none;";
-    }, 3500);
+    notificacaoInicial();
 
     irLogin();
 }
@@ -71,7 +112,7 @@ function btnEntrar() {
     let infosUser = [email.value, senha.value];
     const inputsAlterarEstiloLoginAll = document.querySelectorAll('#InputTLogin'); 
 
-    if(checkInputs(infosUser, inputsAlterarEstiloLoginAll, 2) && validarLogin(InfosRecebidas, valorEmail, valorSenha)) {
+    if(checkInputs(infosUser, inputsAlterarEstiloLoginAll, 2) && Usuario.validarLogin(InfosRecebidas, valorEmail, valorSenha)) {
     
         email.value = "";
         senha.value = "";
@@ -107,140 +148,32 @@ function irLogin() {
 
 }
 
-function checkInputs(inputsAVerificar, inputsAlterarEstiloAll, tipoTela) {
-    
-    let inputsProntosVerificar;
-    inputsProntosVerificar = removerEspacos(inputsAVerificar);
+function irEsqueceuSenha() {
 
-    let posicaoEmail, posicaoSenha;
+    const telaEsqueceuSenha = document.querySelector('#balao_esqueceu_senha');
 
-    if (tipoTela == 1) {
-        posicaoEmail = 1;
-        posicaoSenha = 2;
-    }else if(tipoTela == 2) {
-        posicaoEmail = 0;
-        posicaoSenha = 1;
-    }
-
-    if(!verificarInputVazio(inputsProntosVerificar, inputsAlterarEstiloAll)) {
-        return false;
-    }
-
-    if(!verificarInputEmail(inputsProntosVerificar[posicaoEmail], inputsAlterarEstiloAll[posicaoEmail])) {
-        return false;
-    }
-
-    if(!verificarInputSenha(inputsProntosVerificar[posicaoSenha], inputsAlterarEstiloAll[posicaoSenha])) {
-        return false;
-    }
-
-    if(!verificarInputTamanho(inputsProntosVerificar, inputsAlterarEstiloAll)) {
-        return false;
-    }
-
-    if(tipoTela == 1) {
-        if(!verificarInputTamanhoCpf(inputsProntosVerificar[3], inputsAlterarEstiloAll[3])) {
-            return false;
-        }
-    }
-
-    return true;
-}
-
-function formatarCPF(cpf) {
-
-    cpf = cpf.replace(/\D/g, '');
-
-    if (cpf.length > 11) {
-        cpf = cpf.substring(0, 11);
-    }
-
-    cpf = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
-  
-    return cpf;
-}
-
-function atualizarCampoCPF() {
-
-    cpfInput.value = formatarCPF(cpfInput.value);
+    telaEsqueceuSenha.style = "display: flex;";
 
 }
 
-function removerEspacos(inputsAVerificar) {
+function fecharTela(telaFecharObj) {
 
-    for(let i = 0; i < inputsAVerificar.length; i++) {
-        
-        inputsAVerificar[i] = (inputsAVerificar[i]).replace(/\s/g, "");
-    
-    }
+    const telaFechar = document.querySelector(`${telaFecharObj}`);
+    telaFechar.style = "display: none;";
 
-    return inputsAVerificar;
 }
 
-function verificarInputVazio(inputsProntosVerificar, inputsAlterarEstilo) {
-    
-    let camposVerificados = true; 
+function notificacaoInicial() {
 
-    for(let i = 0; i < inputsProntosVerificar.length; i++) {
-        if(inputsProntosVerificar[i] === '') {
-            inputsAlterarEstilo[i].style.borderColor = "red";
-            camposVerificados = false;
-        }else {
-            inputsAlterarEstilo[i].style.borderColor = "#3A4149";
-        }
-    }
+    let notifyInicial = document.querySelector('#on_of_notify');
+    notifyInicial.style = "display: flex;";
 
-    return camposVerificados;
-}
-
-function verificarInputEmail(inputEmail, inputAlterarEstilo) {
-
-    if (inputEmail.indexOf("@") !== -1 && inputEmail.indexOf(".") !== -1) {  
-        inputAlterarEstilo.style.borderColor = "#3A4149";
-    }else {
-        inputAlterarEstilo.style.borderColor = "red";
-        return false;
-    }
-
-    return true;
-}
-
-function verificarInputSenha(inputSenha, inputAlterarEstilo) {
-
-    if (inputSenha.length >= 5) {  
-        inputAlterarEstilo.style.borderColor = "#3A4149";
-    }else {
-        inputAlterarEstilo.style.borderColor = "red";
-        return false;
-    }
-
-    return true;
-}
-
-function verificarInputTamanho(inputsProntosVerificar, inputsAlterarEstilo) {
-    
-    let camposVerificados = true; 
-
-    for(let i = 0; i < inputsProntosVerificar.length; i++) {
-        if(inputsProntosVerificar[i].length > 50) {
-            inputsAlterarEstilo[i].style.borderColor = "red";
-            camposVerificados = false;
-        }else {
-            inputsAlterarEstilo[i].style.borderColor = "#3A4149";
-        }
-    }
-
-    return camposVerificados;
-}
-
-function verificarInputTamanhoCpf(inputCPF, AlterarEstilo) {
-
-    if(inputCPF.length < 11) {
-        AlterarEstilo.style.borderColor = "red";
-        return false;
-    }else {
-        AlterarEstilo.style.borderColor = "#3A4149";
-        return true;
-    }
+    setTimeout(() => {
+        notifyInicial.classList.add('notify_anim_saida');
+        setTimeout(() => {
+            notifyInicial.style = "display: none;";
+            notifyInicial.classList.remove('notify_anim_saida');
+        }, 400);
+    }, 3500);
 
 }
