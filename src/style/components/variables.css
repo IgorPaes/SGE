@@ -1,11 +1,12 @@
 :root {
 
-    --white-color: rgb(255, 255, 255);
-    --grey-color: rgb(58, 65, 73);
+    --cor-branco-padrao: rgb(255, 255, 255);
+    --cor-cinza-padrao: rgb(58, 65, 73);
+    --cor-cinza-claro: rgba(58, 65, 73, .6);
 
-    --light-purple: rgb(246, 245, 250);
+    --cor-roxo-claro: rgb(246, 245, 250);
 
-    --transition-time: .45s;
+    --tempo-transicao-padrao: .45s;
 
 }
 
