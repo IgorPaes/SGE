@@ -148,31 +148,35 @@ button, a {
 }
 
 .itens_select{
-    gap: 50px;
+    display: grid;
+    gap: 11px;
     position: absolute;
     top: 46px;
-    width: 100%;
     border-radius: 8px;
     background: var(--cor-roxo-claro);
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, .1);
-    padding: 1rem;
+    padding: 15px  10px;
+}
+
+.itens_select li{
+    width: 100%;
+    padding: 0 0 0 10px;
+    color: #858990;
+    display: flex;
 
 }
 
 .itens_select .selecao{
+    padding-top: 20px;
+    padding-bottom: 20px;
     display: flex;
+    align-items: center;
     width: 225px;
     height: 20px;
     color: var(--cor-azul-padrao);
     background: rgba(217, 217, 217, .25);
 }
 
-.itens_select .normal{
-
-    color: #858990;
-    display: flex;
-
-}
 
 .icone_txt_select, .cont_adicionais {
 
@@ -220,15 +224,36 @@ button, a {
     font-weight: 500;
     white-space: nowrap;
     color: var(--cor-azul-padrao);
+    
+}
+
+.bloco_informacao {
+    right: 140px;
+    position: absolute;
+    width: 394px;
+    height: 387px;
+    border-radius: 0px 0px 8px 8px;
+    background-color: #F6F5FB;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.10);
+    margin-top: 10px;
+}
+
+.Titulo h1{
+    white-space: nowrap;
+    font-size: 1.25em;
+    margin-top: 15px;
+    right: 170px;
+    position: absolute; 
+    color: #3A4149;
+
 
 }
 
-.icone_topo_selecionado {
+.bloco_tipo{
+
 
     
-
 }
-
 
 
 
