@@ -93,7 +93,7 @@ function btnCadastrar() {
     }
     
 }
-cadastrado();
+
 function cadastrado() {
     
     notificacaoInicial();
