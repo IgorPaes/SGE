@@ -46,9 +46,7 @@ button, a {
 
 }
 
-/* -------------------------------------------- */
-
-/* -------------- ESTILO LOGIN -------------- */
+/* -------------------- ESTILO CADASTRO E LOGIN ------------------------ */
 
 .container_cadastro_login {
 
@@ -57,7 +55,7 @@ button, a {
     width: 100%;
     height: 100vh;
     background: url(../../assets/images/back-cl.png);
-    background-size: 100%;
+    background-size: auto;
     background-repeat: no-repeat;
     background-color: transparent;
     color: var(--cor-azul-padrao);
@@ -67,6 +65,9 @@ button, a {
     z-index: 1;
 
 }
+
+/* -------------- ESTILO LOGIN -------------- */
+
 
 .bloco_telas_iniciais .Titulo h1 {
 
@@ -197,25 +198,7 @@ button, a {
 
 }
 
-/* -------------- ESTILO Cadastro -------------- */
-
-.container_cadastro_login {
-
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-    height: 100vh;
-    background: url(../../assets/images/back-cl.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-color: transparent;
-    color: var(--cor-azul-padrao);
-    position: relative;
-    user-select: none;
-    overflow: hidden;
-    z-index: 1;
-        
-}
+/* -------------- ESTILO CADASTRO -------------- */
 
 .bloco_telas_iniciais {
 
@@ -227,6 +210,7 @@ button, a {
     width: 40vw;
     height: 100%;
     background-color: var(--cor-branco-padrao);
+    padding: 0 1rem;
 
 }
 

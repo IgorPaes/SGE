@@ -57,7 +57,6 @@ function btnOcultarSenha(inputSenha){
 function btnDesocultarSenha(inputSenha){
 
     const inputPassword = document.querySelector(`${inputSenha}`);
-    
     inputPassword.setAttribute('type','password');
 
 }
@@ -96,9 +95,8 @@ function btnCadastrar() {
 
 function cadastrado() {
     
-    notificacaoInicial();
-
     irLogin();
+    notificacaoInicial('Cadastro concluído com sucesso!');
 }
 
 function btnEntrar() {
@@ -118,6 +116,10 @@ function btnEntrar() {
         senha.value = "";
         logado();
     
+    }else {
+
+        notificacaoInicial('Login ou senha incorreto!');
+
     }
 
 }
@@ -135,6 +137,8 @@ function irCadastro() {
 
     telaLogin.style = "display: none;";
     telaCadastro.style = "display: flex;";
+
+    
 
 }
 
@@ -163,9 +167,11 @@ function fecharTela(telaFecharObj) {
 
 }
 
-function notificacaoInicial() {
+function notificacaoInicial(texto) {
 
-    let notifyInicial = document.querySelector('#on_of_notify');
+    document.querySelector('.conteudo_notify > p').textContent = texto;
+ 
+    const notifyInicial = document.querySelector('#on_of_notify');
     notifyInicial.style = "display: flex;";
 
     setTimeout(() => {
