@@ -160,7 +160,7 @@ button, a {
     
 }
 
-.itens_select {
+.bloco_periodo .itens_select {
 
     display: none;
     position: absolute;
@@ -174,7 +174,7 @@ button, a {
 
 }
 
-.itens_select li {
+.bloco_periodo .itens_select li {
 
     display: flex;
     color: #858990;
@@ -182,7 +182,7 @@ button, a {
 
 }
 
-.itens_select > .selecionado {
+.bloco_periodo .itens_select > .selecionado {
 
     display: flex;
     width: 100%;
@@ -193,7 +193,7 @@ button, a {
     
 }
 
-.icone_txt_select, .cont_adicionais {
+.bloco_periodo .icone_txt_select, .cont_adicionais {
 
     display: flex;
     align-items: center;
@@ -202,7 +202,7 @@ button, a {
 
 }
 
-.icone_txt_select span {
+.bloco_periodo .icone_txt_select span {
 
     font-size: .96rem;
     color: var(--cor-azul-padrao);
@@ -210,7 +210,7 @@ button, a {
 
 }
 
-.icone_txt_select svg path {
+.bloco_periodo .icone_txt_select svg path {
 
     stroke: rgba(59, 66, 74, .5);
     stroke-width: 1.2;

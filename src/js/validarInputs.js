@@ -63,9 +63,7 @@ function atualizarCampoCPF() {
 function removerEspacos(inputsAVerificar) {
 
     for(let i = 0; i < inputsAVerificar.length; i++) {
-        
         inputsAVerificar[i] = (inputsAVerificar[i]).replace(/\s/g, "");
-    
     }
 
     return inputsAVerificar;

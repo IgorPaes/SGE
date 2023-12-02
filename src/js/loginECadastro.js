@@ -10,12 +10,12 @@ const btnFecharObj = document.getElementById('fechar');
 
 const btnOlhoFechado = document.querySelector('#olho_fechado_login');
 const olhoAberto = document.querySelector('#olho_aberto_login');
-btnOlhoFechado.addEventListener('click', function() {
+btnOlhoFechado.addEventListener('click', () => {
     btnOcultarSenha('#senhaLogar');
     btnOlhoFechado.style = 'display: none;';
     olhoAberto.style = 'display: block;';
 });
-olhoAberto.addEventListener('click', function() {
+olhoAberto.addEventListener('click', () => {
     btnDesocultarSenha('#senhaLogar');
     olhoAberto.style = 'display: none;';
     btnOlhoFechado.style = 'display: block;';
@@ -23,22 +23,32 @@ olhoAberto.addEventListener('click', function() {
 
 const btnOlhoFechadoDois = document.querySelector('#olho_fechado_cadastro');
 const btnOlhoAbertoDois = document.querySelector('#olho_aberto_cadastro');
-btnOlhoFechadoDois.addEventListener('click', function() {
+btnOlhoFechadoDois.addEventListener('click', () => {
     btnOcultarSenha('#senhaCadastro');
     btnOlhoAbertoDois.style = 'display: block;';
     btnOlhoFechadoDois.style = 'display: none;';
 });
-btnOlhoAbertoDois.addEventListener('click', function() {
+btnOlhoAbertoDois.addEventListener('click', () => {
     btnDesocultarSenha('#senhaCadastro');
     btnOlhoAbertoDois.style = 'display: none;';
     btnOlhoFechadoDois.style = 'display: block;';
 });
 
-btnCadastrarObj.addEventListener('click', btnCadastrar);
-btnEntrarObj.addEventListener('click', btnEntrar);
-btnLoginObj.addEventListener('click', irLogin);
-btnCadastroObj.addEventListener('click', irCadastro);
-btnEsqueciSenhaObj.addEventListener('click', irEsqueceuSenha);
+btnCadastrarObj.addEventListener('click', () => {
+    btnCadastrar();
+});
+btnEntrarObj.addEventListener('click', () => {
+    btnEntrar();
+});
+btnLoginObj.addEventListener('click', () => {
+    irLogin();
+});
+btnCadastroObj.addEventListener('click', () => {
+    irCadastro();
+});
+btnEsqueciSenhaObj.addEventListener('click', () => {
+    irEsqueceuSenha();
+});
 
 btnFecharObj.addEventListener('click', function() {
     fecharTela('#balao_esqueceu_senha');
@@ -49,7 +59,6 @@ const InfosRecebidas = new Usuario(new InfosUsuario());
 function btnOcultarSenha(inputSenha){
 
     const inputPassword = document.querySelector(`${inputSenha}`);
-
     inputPassword.setAttribute('type','text');
 
 }
@@ -94,9 +103,10 @@ function btnCadastrar() {
 }
 
 function cadastrado() {
-    
+
     irLogin();
     notificacaoInicial('Cadastro concluído com sucesso!');
+
 }
 
 function btnEntrar() {
@@ -111,15 +121,11 @@ function btnEntrar() {
     const inputsAlterarEstiloLoginAll = document.querySelectorAll('#InputTLogin'); 
 
     if(checkInputs(infosUser, inputsAlterarEstiloLoginAll, 2) && Usuario.validarLogin(InfosRecebidas, valorEmail, valorSenha)) {
-    
         email.value = "";
         senha.value = "";
         logado();
-    
     }else {
-
         notificacaoInicial('Login ou senha incorreto!');
-
     }
 
 }
@@ -132,13 +138,21 @@ function logado() {
 
 function irCadastro() {
 
+    const email = document.querySelector('#emailLogar');
+    const senha = document.querySelector('#senhaLogar');
+    const inputsLimpar = document.querySelectorAll('#InputTLogin');
     const telaLogin = document.querySelector('#tela_login');
     const telaCadastro = document.querySelector('#tela_cadastro');
+    
+    email.value = "";
+    senha.value = "";
 
+    inputsLimpar.forEach((element) => {
+        element.style.borderColor = "#3A4149";
+    });
+// ARRUMAR O DO CADASTRO TAMBEM
     telaLogin.style = "display: none;";
     telaCadastro.style = "display: flex;";
-
-    
 
 }
 
@@ -155,7 +169,6 @@ function irLogin() {
 function irEsqueceuSenha() {
 
     const telaEsqueceuSenha = document.querySelector('#balao_esqueceu_senha');
-
     telaEsqueceuSenha.style = "display: flex;";
 
 }
