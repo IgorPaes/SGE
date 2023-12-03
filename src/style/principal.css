@@ -68,7 +68,7 @@ button, a {
     min-width: 100%;
     grid-column-start: 2; 
     grid-column-end: -1;
-    background-color: var(--cor-branco-padrao);
+    background-color: var(--cor-branca-padrao);
     padding: 0 2.3rem 0 4.15rem;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .1);
 
@@ -80,7 +80,7 @@ button, a {
     grid-template-rows: repeat(2, min-content) 2fr min-content;
     grid-row-start: 1; 
     grid-row-end: 3; 
-    background-color: var(--cor-branco-padrao);
+    background-color: var(--cor-branca-padrao);
     border-radius: 0 0 22px 0;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .1);
     user-select: none;
@@ -133,7 +133,7 @@ button, a {
 
 }
 
-.bloco_periodo .bloco_select {
+.bloco_periodo .select_block {
 
     display: flex;
     align-items: center;
@@ -146,7 +146,7 @@ button, a {
 
 }
 
-.bloco_periodo .bloco_select > svg {
+.bloco_periodo .select_block > svg {
 
     fill: rgba(59, 66, 74, .8);
 
@@ -160,7 +160,7 @@ button, a {
     
 }
 
-.bloco_periodo .itens_select {
+.bloco_periodo .select_itens {
 
     display: none;
     position: absolute;
@@ -174,7 +174,7 @@ button, a {
 
 }
 
-.bloco_periodo .itens_select li {
+.bloco_periodo .select_itens li {
 
     display: flex;
     color: #858990;
@@ -182,7 +182,7 @@ button, a {
 
 }
 
-.bloco_periodo .itens_select > .selecionado {
+.bloco_periodo .select_itens > .selecionado {
 
     display: flex;
     width: 100%;

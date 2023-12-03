@@ -1,6 +1,6 @@
-document.getElementById("bloco_drop").addEventListener('click', () => {
-    const listaSelect = document.getElementById('lista_select');
-    const options = listaSelect.querySelectorAll('#lista_select li');
+document.getElementById("drop_block").addEventListener('click', () => {
+    const listaSelect = document.getElementById('select_list');
+    const options = listaSelect.querySelectorAll('#select_list li');
     let ultimoSelecionado = options[0];
     options.forEach((option) => {        
         option.addEventListener('click', () => {
