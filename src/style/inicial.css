@@ -1,0 +1,438 @@
+@import url('/src/style/components/variables.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+
+    position: relative;
+    margin: 0;
+
+}
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    line-height: normal;
+    font-weight: 400;
+    
+}
+
+/* ----------------- SCROLL ----------------- */
+
+*::-webkit-scrollbar {
+
+    width: 4px;
+
+}
+
+/* ------------------ RESET ------------------ */
+
+input:not([type="checkbox"]), button, textarea, a {
+
+    all: unset;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+
+}
+
+button, a {
+
+    transition: all var(--tempo-transicao-padrao);
+    cursor: pointer;
+
+}
+
+/* -------------------- ESTILO CADASTRO E LOGIN ------------------------ */
+
+.container_cadastro_login {
+
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100vh;
+    background: url(../../assets/images/back-cl.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    color: var(--cor-azul-padrao);
+    position: relative;
+    user-select: none;
+    overflow: hidden;
+    z-index: 1;
+
+}
+
+/* -------------- ESTILO LOGIN -------------- */
+
+
+.bloco_telas_iniciais .Titulo h1 {
+
+    text-align: center;
+    color: var(--cor-azul-padrao);
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: .075rem;
+
+}
+
+.bloco_telas_iniciais .container_inicial {
+
+    display: grid;
+    gap: 6.4rem;
+    min-width: 60%;
+    height: min-content;
+        
+}
+
+.bloco_inputs_inicial {
+
+    height: min-content;
+    display: grid;
+    gap: 1.5rem;
+        
+}
+
+.estilo_input_inicial {
+
+    width: 100%;
+    height: 3.6rem;
+    background-color: transparent;
+    border-radius: .25rem;
+    border: 2px solid #3A4149;
+    padding-right: 2.8rem;
+    animation: slide-out-in .25s ease-in both;
+    position: relative;
+
+}
+
+@keyframes slide-out-in {
+    0% {
+        transform: translateX(-1000px);
+    }100% {
+        transform: translateX(0);
+    }
+}
+
+.estilo_input_inicial .bloco_olho_aberto, .estilo_input_inicial .bloco_olho_fechado {
+
+    background-color: transparent;
+    position: absolute;
+    top: 55%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 10;
+
+}
+
+.bloco_olho_aberto {
+
+    display: none;
+
+}
+
+.bloco_olho_fechado {
+
+    z-index: 20;
+
+}
+
+.estilo_input_inicial input::placeholder {
+
+    color: rgba(58, 65, 73, .6);
+    letter-spacing: .061rem;
+
+}
+
+.estilo_input_inicial input {
+
+    font-size: 1.3rem;
+    padding-left: 2.4rem;
+
+}
+
+.bloco_botoes_inicial {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+}
+
+.bloco_botoes_inicial .btn_inicial {
+
+    text-align: center;
+    border-radius: 8px;
+    border: 2px solid var(--cor-azul-padrao);
+    background: var(--cor-azul-padrao);
+    color: var(--cor-branca-padrao);
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    max-width: 70%;
+    height: 3.6rem;
+
+}
+
+.bloco_botoes_inicial .btn_inicial:hover {
+
+    color: var(--cor-azul-padrao);
+    background: transparent;
+
+}
+
+.bloco_botoes_inicial .btn_complementar {
+
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    letter-spacing: 0.125rem;
+    margin-top: .8rem;
+    height: min-content;
+
+}
+
+/* -------------- ESTILO CADASTRO -------------- */
+
+.bloco_telas_iniciais {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6.4rem;
+    width: 40vw;
+    height: 100%;
+    background-color: var(--cor-branca-padrao);
+    padding: 0 1rem;
+
+}
+
+.bloco_telas_iniciais .Titulo h1 {
+
+    text-align: center;
+    color: var(--cor-azul-padrao);
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: .075rem;
+
+}
+
+.bloco_telas_iniciais .container_inicial {
+
+    display: grid;
+    gap: 6.4rem;
+    min-width: 60%;
+    height: min-content;
+        
+}
+
+.bloco_inputs_inicial {
+
+    height: min-content;
+    display: grid;
+    gap: 1.5rem;
+        
+}
+
+.bloco_botoes_inicial {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+}
+
+.bloco_botoes_inicial .btn_inicial {
+
+    text-align: center;
+    border-radius: 8px;
+    border: 2px solid var(--cor-azul-padrao);
+    background: var(--cor-azul-padrao);
+    color: var(--cor-branca-padrao);
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    max-width: 70%;
+    height: 3.6rem;
+
+}
+
+.bloco_botoes_inicial .btn_inicial:hover {
+
+    color: var(--cor-azul-padrao);
+    background: transparent;
+
+}
+
+.bloco_botoes_inicial .btn_complementar {
+
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    letter-spacing: 0.125rem;
+    margin-top: .8rem;
+    height: min-content;
+
+}
+
+/* ------- LOGIN ------- */
+
+.btns_comp_login {
+
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+.manter_log {
+
+    display: flex;
+    align-items: center;
+
+}
+
+.manter_log input {
+
+    width: 26px;
+    height: 25px;
+    margin-right: 10px;
+    cursor: pointer;
+    background-color: transparent;
+
+}
+
+.btn_esqueci_pass button, .manter_log label {
+
+    font-size: .92rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+
+}
+
+/* ------- Redefinir senha ------- */
+
+.balao_tela_inicial {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 45%;
+    background: var(--cor-branca-padrao);
+    border: 4px solid var(--cor-azul-padrao);
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 1000px rgba(0, 0, 0, .6);
+    animation: fade-in .8s ease-in both;
+
+}
+
+@keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+.balao_tela_inicial .btn_fechar_balao  {
+
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: min-content;
+    height: min-content;
+
+}
+
+.balao_tela_inicial .btn_fechar_balao:hover  {
+
+    scale: .85;
+
+}
+
+.balao_tela_inicial p {
+
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 3px;
+    max-width: 60%;
+
+}
+
+/* ------- Notificação ------- */
+
+.notify_incial {
+    
+    display: none;
+    position: absolute;
+    top: 100px;
+    right: 10px;
+    align-items: center;
+    border-radius: 4px;
+    background: rgba(48, 48, 48, .5);
+    padding: 0 15px 0 10px;
+    min-height: 5rem;
+    min-width: 15rem;
+    animation: anim-notify-entrada .4s ease-in;
+
+}
+
+.notify_anim_saida {
+
+    animation: anim-notify-saida .4s ease-out;
+
+}
+
+@keyframes anim-notify-entrada {
+    0% {
+        transform: translateX(400px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes anim-notify-saida {
+    100% {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.notify_incial .conteudo_notify p {
+
+    color: var(--cor-branca-padrao);
+    font-size: .85rem;
+    font-weight: 500;
+    text-shadow: 0px 0px 9px rgba(255, 255, 255, 0.25);
+
+}
+
+.notify_incial > svg {
+
+    margin-right: 5px;
+
+}
+
+/* -------------------------------------------- */
+

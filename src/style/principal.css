@@ -1,0 +1,501 @@
+@import url('/src/style/components/variables.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+
+    position: relative;
+    margin: 0;
+
+}
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    line-height: normal;
+    font-weight: 400;
+
+}
+
+/* ----------------- SCROLL ----------------- */
+
+*::-webkit-scrollbar {
+
+    width: 4px;
+
+}
+
+/* ------------------ RESET ------------------ */
+
+input:not([type="checkbox"]), button, textarea, a {
+
+    all: unset;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+
+}
+
+button, a {
+
+    transition: all var(--tempo-transicao-padrao);
+    cursor: pointer;
+
+}
+
+figure {
+
+    margin: 0 !important;
+
+}
+
+/* -------------------------------------------- */
+
+.main_container {
+
+    width: 100%;
+    height: 100vh; /*Verificar*/
+    display: grid;
+    grid-template-columns: 20rem auto;
+    grid-template-rows: 6.25rem auto;
+    padding-bottom: 6.25rem;
+    background-color: var(--cor-roxo-claro);
+
+}
+
+.main_container > .container_topo {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 100%;
+    grid-column-start: 2; 
+    grid-column-end: -1;
+    background-color: var(--cor-branca-padrao);
+    padding: 0 2.3rem 0 4.15rem;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .1);
+
+}
+
+.main_container > .container_navegacao {
+    
+    display: grid;
+    grid-template-rows: repeat(2, min-content) 2fr min-content;
+    grid-row-start: 1; 
+    grid-row-end: 3; 
+    background-color: var(--cor-branca-padrao);
+    border-radius: 0 0 22px 0;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .1);
+    user-select: none;
+
+}
+
+.container_topo .bloco_pesquisa {
+
+    display: flex;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+    max-width: 28.75em;
+    min-width: 10em;
+    padding-left: .7rem;
+    border-radius: 8px;
+    border: 1px solid rgba(58, 65, 73, .25);
+    background: rgba(217, 217, 217, 0);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, .15);
+
+}
+
+.bloco_pesquisa input {
+    
+    font-size: 1rem;
+    color: rgb(58, 65, 73);
+    padding-right: .5rem;
+    width: 100%;
+
+}
+
+.bloco_pesquisa svg {
+
+    margin-right: .7rem;
+
+}
+
+.bloco_pesquisa .bloco_digitar::placeholder {
+
+    font-size: 1rem;
+    color: rgba(58, 65, 73, .35);
+
+}
+
+.bloco_periodo{
+   
+    position: relative;
+    line-height: 100%;
+    cursor: pointer;
+
+}
+
+.bloco_periodo .select_block {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 .5rem;
+    width: 240px;
+    border-radius: 8px;
+    border: 1px solid rgba(58, 65, 73, .25);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, .15);
+
+}
+
+.bloco_periodo .select_block > svg {
+
+    fill: rgba(59, 66, 74, .8);
+
+}
+
+.bloco_periodo span{
+    
+    display: flex;
+    font-size: .95em;
+    margin-left: 6px;
+    
+}
+
+.bloco_periodo .select_itens {
+
+    display: none;
+    position: absolute;
+    gap: .7rem;
+    top: 46px;
+    width: 100%;
+    border-radius: 8px;
+    background: var(--cor-roxo-claro);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, .1);
+    padding: 1rem 0;
+
+}
+
+.bloco_periodo .select_itens li {
+
+    display: flex;
+    color: #858990;
+    padding: 0 10px 0 1rem;
+
+}
+
+.bloco_periodo .select_itens > .selecionado {
+
+    display: flex;
+    width: 100%;
+    color: var(--cor-azul-padrao);
+    background: rgba(217, 217, 217, .25);
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    
+}
+
+.bloco_periodo .icone_txt_select, .cont_adicionais {
+
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 2.5rem;
+
+}
+
+.bloco_periodo .icone_txt_select span {
+
+    font-size: .96rem;
+    color: var(--cor-azul-padrao);
+    user-select: none;
+
+}
+
+.bloco_periodo .icone_txt_select svg path {
+
+    stroke: rgba(59, 66, 74, .5);
+    stroke-width: 1.2;
+
+}
+
+.cont_adicionais {
+
+    gap: 3.75em;
+
+}
+
+.bloco_lateral {
+
+    display: flex;
+    align-items: center;
+    gap: 2.3em;
+
+}
+
+.bloco_usuario {
+
+    display: flex;
+    align-items: center;
+    gap: .8em;
+    width: 100%;
+
+}
+
+.bloco_usuario figure {
+    
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--cor-azul-claro);
+    cursor: pointer;
+    
+}
+
+.bloco_usuario figure img {
+    
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+    
+}
+
+.bloco_usuario span {
+
+    font-size: 1.25em;
+    font-weight: 500;
+    white-space: nowrap;
+    color: var(--cor-azul-padrao);
+
+}
+
+.icone_notificacao, .icone_topo_selecionado {
+
+    cursor: pointer;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------- NAVEGAÇÃO LATERAL -------------- */
+
+.container_navegacao .bloco_identidade {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 6.25rem;
+
+}
+
+.container_navegacao .bloco_identidade h1 {
+
+    font-size: 1.25rem;
+    color: #989898;
+    font-weight: 600;
+
+}
+
+.container_navegacao .border {
+
+    height: 1px;
+    width: 80%;
+    margin: 0 auto;
+    background: #CCC;
+    
+}
+
+.container_navegacao .bloco_navegacao {
+
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 2em;
+    margin-top: 3.8em;
+    max-height: max-content;
+
+}
+
+.container_navegacao .caixa_selecao {
+
+    display: flex;
+    align-items: center;
+    gap: 1.4em;
+    padding-left: 2em;
+    width: 100%;
+    height: 4em;
+    cursor: pointer;
+
+}
+
+.caixa_selecao > * {
+    
+    transition: transform var(--tempo-transicao-padrao);
+
+}
+
+.caixa_selecao:hover > * {
+
+    transform: translateX(20px);
+
+}
+
+.container_navegacao .caixa_selecao svg path {
+
+    stroke-opacity: .6;
+    fill-opacity: .6;
+
+}
+
+.container_navegacao .caixa_selecao h2 {
+
+    font-size: 1.5em;
+    color: var(--cor-azul-claro);
+
+}
+
+.container_navegacao .caixa_selecao.sair svg path {
+
+    stroke: rgba(122, 0, 0, .5);
+
+}
+
+.container_navegacao .caixa_selecao.sair h2 {
+
+    color: rgba(122, 0, 0, .5);
+
+}
+
+.container_navegacao .caixa_selecao.sair:hover svg path {
+
+    stroke: rgba(122, 0, 0, 1);
+
+}
+
+.container_navegacao .caixa_selecao.sair:hover h2 {
+
+    color: rgba(122, 0, 0, .75);
+
+}
+
+.bloco_dr {
+
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: min-content;
+    margin-bottom: 1.8em;
+
+}
+
+.bloco_dr p {
+
+    font-size: .94em;
+    color: rgba(0, 0, 0, .50);
+
+}
+
+.container_navegacao .caixa_selecao.selecionado {
+
+    background: rgba(246, 245, 250, .2);
+    border-top: 1px solid rgba(58, 65, 73, .25);
+    border-bottom: 1px solid rgba(58, 65, 73, .25);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .1);
+    cursor: pointer;
+
+}
+
+.container_navegacao .caixa_selecao.selecionado svg path {
+
+    stroke-opacity: 1;
+    fill-opacity: 1;
+
+}
+
+.container_navegacao .caixa_selecao.selecionado h2 {
+
+    color: var(--cor-azul-padrao);
+
+}
+
+/* ----------------------------------------------- */
+
+
+
+.divtest{
+    display:  flex;
+    justify-content: center;
+}
+.obterElementos{
+    width: 720px;
+    height: 392px;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 3%;
+    border-radius: 8px;
+    margin: 2%;
+    background-color: lightskyblue
+}
+
+.foto{
+    width: 100%;
+    
+}
+.foto > img{
+    width: 100%;
+}
+.foto > button{
+    padding-left: 15%;  
+}
+.active{
+    margin-top: 10%;
+    padding-left: 35%;
+}
+
+.ladoDados{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.entradas{
+    height: 20%;
+    width: 100%;
+}
+.entradas > label{
+    padding-left: 5%;
+    border-left: 2px solid lightgray;
+}
+.entradas > input{
+    height: 50px;
+    width: 100%;
+    padding-left: 30px;
+    border-bottom: 2px solid gray;
+}
+
+.entradas > input::content{
+    padding-left: 30px;
+}
+.botoes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 3vh;
+}

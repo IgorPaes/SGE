@@ -1,0 +1,12 @@
+:root {
+
+    --cor-branca-padrao: rgb(255, 255, 255);
+    --cor-azul-padrao: #3A4149;
+    --cor-azul-claro: rgba(58, 65, 73, .6);
+
+    --cor-roxo-claro: rgb(246, 245, 250);
+
+    --tempo-transicao-padrao: .45s;
+
+}
+
