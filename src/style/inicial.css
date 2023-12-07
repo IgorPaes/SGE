@@ -46,6 +46,12 @@ button, a {
 
 }
 
+h1, h2, h3, h4 {
+
+    margin-bottom: 0 !important;
+
+}
+
 /* -------------------- ESTILO CADASTRO E LOGIN ------------------------ */
 
 .container_cadastro_login {
