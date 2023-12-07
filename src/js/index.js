@@ -234,7 +234,7 @@ function btnCarregarListaProdutos(){
 
 
 //DESCOBRIR COMO LIMPAR O HTML ANTES DE ENVIAR UMA NOVA FUNCAO DE RENDERIZACAO
-//
+/////CRIAR FUNCAO PARA EDITAR ITENS ÚNICOS, UTILIZANDO IDS UNICOS
 function CarregarCriarProdutos() {
     const blocoPai = document.getElementById('add_container')
     return blocoPai.innerHTML += `<div class="testar">
