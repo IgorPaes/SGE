@@ -233,7 +233,8 @@ function btnCarregarListaProdutos(){
 } 
 
 
-
+//DESCOBRIR COMO LIMPAR O HTML ANTES DE ENVIAR UMA NOVA FUNCAO DE RENDERIZACAO
+//
 function CarregarCriarProdutos() {
     const blocoPai = document.getElementById('add_container')
     return blocoPai.innerHTML += `<div class="testar">
