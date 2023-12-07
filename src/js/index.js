@@ -93,10 +93,11 @@ function ValoresProd() {
 }
 
 let vecProdutos = [];
+
+
 function recebeDados() {
     
-    const valoresProd = ValoresProd();
-    
+    const valoresProd = ValoresProd();    
     Produto = {
         nomeProd : '',
         marcaProd : '',
@@ -299,3 +300,25 @@ function CarregarCriarProdutos() {
     </div>
 </div>`
 }
+
+
+
+
+
+
+
+function editarItem() {  
+    let conv = JSON.parse(localStorage.getItem('ProdutosCriados'));
+    //let id = conv.length
+    let id = conv.quantidadeProd
+    console.log(id);
+    //console.log(conv);
+}
+
+editarItem()
+
+document.querySelector('.active').addEventListener('click', (e) => {
+    console.log(e);
+    console.log(e[0]);
+    console.log(e[1]);
+})
