@@ -46,12 +46,24 @@ button, a {
 
 }
 
+figure {
+
+    margin: 0 !important;
+
+}
+
+h1, h2, h3, h4 {
+
+    margin-bottom: 0 !important;
+
+}
+
 /* -------------------------------------------- */
 
 .main_container {
 
     width: 100%;
-    height: 100vh;
+    height: 100vh; /*Verificar*/
     display: grid;
     grid-template-columns: 20rem auto;
     grid-template-rows: 6.25rem auto;
@@ -246,6 +258,15 @@ button, a {
     height: 44px;
     border-radius: 50%;
     background-color: var(--cor-azul-claro);
+    cursor: pointer;
+    
+}
+
+.bloco_usuario figure img {
+    
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
     
 }
 
@@ -422,3 +443,207 @@ button, a {
 }
 
 /* ----------------------------------------------- */
+
+
+
+.divtest{
+    display:  flex;
+    justify-content: center;
+}
+.obterElementos{
+    width: 720px;
+    height: 392px;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 3%;
+    border-radius: 8px;
+    margin: 2%;
+    /*background-color: lightskyblue*/
+}
+
+.foto{
+    width: 100%;
+    
+}
+.foto > img{
+    width: 100%;
+}
+.foto > button{
+    padding-left: 15%;  
+}
+.active{
+    margin-top: 10%;
+    padding-left: 35%;
+}
+
+.ladoDados{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+}
+.entradas{
+    height: 20%;
+    width: 100%;
+}
+.entradas > label{
+    padding-left: 5%;
+    border-left: 2px solid lightgray;
+}
+.entradas > input{
+    height: 50px;
+    width: 100%;
+    padding-left: 30px;
+    border-bottom: 2px solid gray;
+}
+
+.entradas > input::content{
+    padding-left: 30px;
+}
+.botoes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 3vh;
+}
+
+
+
+
+
+
+/*========================modificar prod=========================*/
+
+#containerPrincipal{
+    width: 100%;
+    height: 70%;
+    background-color: lightblue;
+}
+
+.headerProd{
+    display: flex;
+    justify-content: space-around;
+    color: gray;
+}
+.headerProd > .prodst{
+    display: flex;
+    width: 60%;
+    justify-content: space-evenly;
+}
+.separador{
+    width: 90%;
+    height: 2px;
+    background: #2C2C2C;
+}
+.itemlist{
+    display: grid;
+    grid-template-columns: 1.7fr 3fr 30px;
+    width: 90%;
+    height: 7vh;
+    border-bottom: 2px #2C2C2C solid;
+    align-items: center;
+
+}
+.separar{
+    background-color: rebeccapurple;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.imageProd > .vazio1{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.imageProd > .vazio2{
+    width: 50%;
+}
+.vazio1 > figure{
+    border-radius: 8px;
+    border: 2px black solid;
+    width: 3vw;
+    height: 5vh;
+    margin-left: 15px;
+}
+.vazio1 > figure > img{
+    width: 100%;
+}
+.vazio1 > input{
+    width: 100px;
+    height: 25px;
+}
+.itemlist > .infoProd{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.infoProd > .categoriaItem{
+    background: rgba(140, 117, 255, 0.25);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 85px;
+    height: 34px;
+}
+#displayer{
+    width: 20px;
+    height: 20px;
+}
+
+.container-card-content{
+    width: 1700px;
+    height: 20vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.card.card-body{
+    width: 1735px;
+}
+
+.content-card{
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    gap: 3%;
+}
+.sect-image{
+    height: 60%;
+    width: 100%;
+    padding-left: 25%;
+}
+.sect-image > img {
+    width:50%;
+    height: 100%;
+}
+
+.sect-image > button{
+    height: 30px;
+    
+}
+.sect-image > div {
+    width: 100%;
+    height: 100px;
+    
+    padding-left: 10%;
+}
+.sect-image > div > button{
+    width: 150px;
+    height: 50px;
+    color: #8C75FF;
+    font-family: Inter;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.content-card > button{
+    color: #8C75FF;
+    font-family: Inter;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
