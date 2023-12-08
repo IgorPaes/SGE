@@ -92,8 +92,8 @@ function recebeDados() {
 function btnCarregarListaProdutos(){
 
     const blocoPai = document.getElementById('add_container');
-    if (localStorage.getItem('ProdutosCriados') == null || localStorage.getItem('ProdutosCriados') == ' ') {
-        localStorage.setItem('ProdutosCriados', ' ');
+    if (localStorage.getItem('ProdutosCriados') == null || localStorage.getItem('ProdutosCriados') == '' || localStorage.getItem('ProdutosCriados') == ' ') {
+        localStorage.setItem('ProdutosCriados', JSON.stringify([]));
         blocoPai.innerHTML = '';
     }else {
         blocoPai.innerHTML = '';
