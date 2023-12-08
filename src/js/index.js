@@ -1,11 +1,13 @@
 addEventListener('load', () => CarregarCriarProdutos())
 
+document.getElementById('btnSair').addEventListener('click', () => {
 
-function btnSair() {
-    localStorage.removeItem('infosCadastro')
-    localStorage.setItem('manterLogado', '0')
+    localStorage.removeItem('infosCadastro');
+    localStorage.setItem('manterLogado', '0');
     window.location.href = "inicial.html";
-}
+
+})
+
 localStorage.setItem('activedItem', '0');
 // Função para mudar o número armazenado no localStorage
 function activedItem() {
@@ -281,7 +283,7 @@ function criaItemLista(collapseId, item) {
 
 
 function CarregarCriarProdutos() {
-    const blocoPai = document.getElementById('add_container')
+    const blocoPai = document.getElementById('add_container');
     return blocoPai.innerHTML = `
     <div class="testar">       
         <div class="divtest">
