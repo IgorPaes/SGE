@@ -1,4 +1,4 @@
-addEventListener('load', () => CarregarCriarProdutos())
+document.addEventListener('load', () => CarregarCriarProdutos());
 
 document.getElementById('btnSair').addEventListener('click', () => {
 
