@@ -223,7 +223,7 @@ function btnCarregarListaProdutos(){
                         <label for="cod">Codigo de barras</label>
                         <input type="text" placeholder="3565.65564.3443-54" name="cod">
                     </div>   
-                    <button type="button" onclick="btnSalvar(id)">+ Salvar as alteracoes</button>                                                      
+                    <button type="button" class='active' onclick="btnSalvar()">+ Salvar as alteracoes</button>                                                      
                 </section>
             </div>
             </div>                    
@@ -318,7 +318,8 @@ function editarItem() {
 editarItem()
 
 document.querySelector('.active').addEventListener('click', (e) => {
-    console.log(e);
-    console.log(e[0]);
-    console.log(e[1]);
+    const vecLocal = localStorage.getItem('ProdutosCriados');
+    let conv = JSON.parse(vecLocal);
+    let listaNova = conv.find(e => e.nomeProd)
+    console.log(listaNova);
 })
