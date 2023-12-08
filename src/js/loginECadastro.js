@@ -1,6 +1,7 @@
 import checkInputs from './validarInputs.js';
 import { Usuario, InfosUsuario } from './Usuario.js';
 
+
 if(localStorage.getItem('manterLogado') === "1") {
     logado();
 }else {
