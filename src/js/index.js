@@ -9,6 +9,9 @@ document.getElementById('btnSair').addEventListener('click', () => {
 
 document.getElementById('btnTelaHome').addEventListener('click', () => {
     CarregarCriarProdutos();
+    document.getElementById('recebeDados').addEventListener('click', () => {
+        recebeDados();
+    });
 })
 
 document.getElementById('btnTelaProdutos').addEventListener('click', () => {
@@ -285,9 +288,6 @@ function criaItemLista(collapseId, item) {
 
 function CarregarCriarProdutos() {
     const blocoPai = document.getElementById('add_container');
-    document.getElementById('recebeDados').addEventListener('click', () => {
-        recebeDados();
-    });
     return blocoPai.innerHTML = `
     <div class="testar">       
         <div class="divtest">
