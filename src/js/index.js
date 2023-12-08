@@ -5,7 +5,14 @@ document.getElementById('btnSair').addEventListener('click', () => {
     localStorage.removeItem('infosCadastro');
     localStorage.setItem('manterLogado', '0');
     window.location.href = "inicial.html";
+})
 
+document.getElementById('btnTelaHome').addEventListener('click', () => {
+    CarregarCriarProdutos();
+})
+
+document.getElementById('btnTelaProdutos').addEventListener('click', () => {
+    btnCarregarListaProdutos();
 })
 
 localStorage.setItem('activedItem', '0');
@@ -35,8 +42,6 @@ function ValoresProd() {
 
     return valores; 
 }
-
-
 
 function recebeDados() {
     let vecProdutos = [];
@@ -280,6 +285,8 @@ function criaItemLista(collapseId, item) {
     `;
     return div.firstElementChild;
 }
+
+
 
 
 function CarregarCriarProdutos() {
