@@ -15,6 +15,10 @@ document.getElementById('btnTelaProdutos').addEventListener('click', () => {
     btnCarregarListaProdutos();
 })
 
+document.getElementById('recebeDados').addEventListener('click', () => {
+    recebeDados();
+});
+
 localStorage.setItem('activedItem', '0');
 // Função para mudar o número armazenado no localStorage
 function activedItem() {
@@ -141,7 +145,6 @@ function carregaBtnsSalvar() {
 }
 
 function removeProduto() {
-
     const vecBtns = document.querySelectorAll('#add_container .itemlist #btnDeletar');
     vecBtns.forEach((btn, index) => {
         btn.addEventListener('click', () => {
@@ -157,7 +160,6 @@ function removeProduto() {
 }
 
 function removerQuantidade() {
-   
     const vecBtns = document.querySelectorAll('#rmvBtn');
     let vecProdutos = JSON.parse(localStorage.getItem('ProdutosCriados'));
     let obj;
@@ -176,7 +178,6 @@ function removerQuantidade() {
 }
 
 function adicionarQuantidade() {
-
     const vecBtns = document.querySelectorAll('#addBtn');
     let vecProdutos = JSON.parse(localStorage.getItem('ProdutosCriados'));
     let obj;
@@ -286,9 +287,6 @@ function criaItemLista(collapseId, item) {
     return div.firstElementChild;
 }
 
-
-
-
 function CarregarCriarProdutos() {
     const blocoPai = document.getElementById('add_container');
     return blocoPai.innerHTML = `
@@ -343,7 +341,7 @@ function CarregarCriarProdutos() {
     </div> 
     <div class="botoes">
         <div>
-            <button type="button" class="btn btn-primary" onclick="recebeDados()">Criar</button>           
+            <button type="button" class="btn btn-primary" id="recebeDados">Criar</button>           
         </div>
     </div>`
 }
