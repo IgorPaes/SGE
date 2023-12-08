@@ -287,12 +287,7 @@ function CarregarCriarProdutos() {
         <div class="divtest">
             <div class="obterElementos">
                 <div class="ladoFotos">
-                    <div class="foto">
-                        <label for="">Imagem do Produto</label>
-                        <img src="/assets/images/esponja.png" alt="">
-                        <button type="button">+ Adicionar imagem</button>
-                    </div>
-                    <div class="active"><button type="button" onclick="activedItem()">Ativar</button></div>
+                   
                 </div>
                 <div class="ladoDados">
                     <div class="entradas">
