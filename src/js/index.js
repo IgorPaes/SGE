@@ -189,6 +189,8 @@ function criaItemLista(collapseId, item) {
 
         </section>  
         <p class="d-inline-flex gap-1">
+            
+        <a onclick="removeProduto()" class="btn btn-danger">D </a>
             <a class="btn btn-primary" data-bs-toggle="collapse" href="#${collapseId}" role="button" aria-expanded="false" aria-controls="${collapseId}">
             ^
             </a>
@@ -236,7 +238,7 @@ function criaItemLista(collapseId, item) {
                         <label for="cod">Codigo de barras</label>
                         <input type="text" placeholder="3565.65564.3443-54" name="cod">
                     </div>   
-                    <button type="button" id="btnEditar" class='active'>+ Salvar as alteracoes</button>                                                      
+                    <button type="button" id="btnEditar" class='active'>+ Salvar as alteracoes</button>                                                 
                 </section>
             </div>
             </div>                    
@@ -245,7 +247,11 @@ function criaItemLista(collapseId, item) {
     `;
     return div.firstElementChild;
 }
+//<button type="button" class="btn btn-danger" onclick="removeProduto()">Deletar</button>    
 
+
+
+ 
 
 function carregaBtnsSalvar() {
     const vecBtns = document.querySelectorAll('#add_container .itemlist #btnEditar');
@@ -265,6 +271,25 @@ function carregaBtnsSalvar() {
         })
     })
 }
+
+
+function removeProduto() {
+        let vecProdutos = JSON.parse(localStorage.getItem('ProdutosCriados'));
+
+        const index = vecProdutos.findIndex(produto => produto.nomeProd);
+
+        if (index !== -1) {
+            vecProdutos.splice(index, 1);
+            localStorage.setItem('ProdutosCriados', JSON.stringify(vecProdutos));
+        } else {
+            console.error('Produto a remover não encontrado!');
+        }
+}
+
+
+
+
+
 
 
 //DESCOBRIR COMO LIMPAR O HTML ANTES DE ENVIAR UMA NOVA FUNCAO DE RENDERIZACAO
@@ -328,7 +353,7 @@ function CarregarCriarProdutos() {
     </div> 
     <div class="botoes">
         <div>
-            <button type="button" class="btn btn-primary" onclick="recebeDados()">Criar</button>
+            <button type="button" class="btn btn-primary" onclick="recebeDados()">Criar</button>           
         </div>
     </div>`
 }
