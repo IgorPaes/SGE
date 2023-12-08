@@ -61,8 +61,6 @@ function criarItem() {
 }
 */
 
-
-
 localStorage.setItem('activedItem', '0');
 // Função para mudar o número armazenado no localStorage
 function activedItem() {
@@ -93,10 +91,10 @@ function ValoresProd() {
 }
 
 let vecProdutos = [];
+
 function recebeDados() {
     
-    const valoresProd = ValoresProd();
-    
+    const valoresProd = ValoresProd();    
     Produto = {
         nomeProd : '',
         marcaProd : '',
@@ -130,7 +128,7 @@ function recebeDados() {
         }
         
         localStorage.setItem('ProdutosCriados', JSON.stringify(vecProdutos)) // Atribui o segundo valor do array
-
+        alert("Produto criado!");
     }else {
         console.log('Não há valores suficientes para acessar o segundo elemento.');
     }
@@ -144,15 +142,31 @@ recuperarProdutos()
 
 
 function btnCarregarListaProdutos(){
-    const blocoPai = document.getElementById('add_container')
-    console.log(blocoPai);
-    const vecLocal = localStorage.getItem('ProdutosCriados');
-    let conv = JSON.parse(vecLocal);
 
-    contador = 0;
-    conv.forEach((item) => {
-        const collapseId = 'collapseExample' + contador;
-        blocoPai.innerHTML += `<div class="itemlist">
+    const blocoPai = document.getElementById('add_container');
+    if (localStorage.getItem('ProdutosCriados') == null || localStorage.getItem('ProdutosCriados') == ' ') {
+        localStorage.setItem('ProdutosCriados', ' ');
+        blocoPai.innerHTML = '';
+    }else {
+        blocoPai.innerHTML = '';
+        const vecLocal = localStorage.getItem('ProdutosCriados');
+        let conv = JSON.parse(vecLocal);
+
+        let contador = 0;
+        conv.forEach((item) => {
+            let collapseId = 'collapseExample' + contador;
+            blocoPai.insertAdjacentElement('beforeend', criaItemLista(collapseId, item));
+            contador++;
+        });
+
+        carregaBtnsSalvar();
+    }
+} 
+
+function criaItemLista(collapseId, item) {
+    const div = document.createElement('div');
+    div.innerHTML = `
+    <div class="itemlist">
         <section class="imageProd">
             <div class="vazio1">
                 <input type="checkbox">
@@ -172,14 +186,16 @@ function btnCarregarListaProdutos(){
             <label for="">R$${item.quantidadeProd * item.precoProd}</label>
             <label for=""></label>
             <label for="">${Date.now()}</label>
-    
+
         </section>  
         <p class="d-inline-flex gap-1">
+            
+        <a onclick="removeProduto()" class="btn btn-danger">D </a>
             <a class="btn btn-primary" data-bs-toggle="collapse" href="#${collapseId}" role="button" aria-expanded="false" aria-controls="${collapseId}">
-              ^
+            ^
             </a>
         </p>
-          <div class="collapse" id="${collapseId}"   style="width: 50vw;">
+        <div class="collapse bloco_edit" id="${collapseId}">
             <div class="card card-body">
                 <div class="container-card-content">
                 <section class="sect-image">
@@ -191,7 +207,7 @@ function btnCarregarListaProdutos(){
                 <section class="content-card">
                     <div class="entradas">
                         <label for="nome">Nome do produto</label>
-                        <input type="text" placeholder="Bom brill (Eco)" name="nome">
+                        <input id="inputNomeItem" type="text" placeholder="Bom brill (Eco)" name="nome">
                     </div>
                     <div class="entradas">
                         <label for="catg">Categoria</label>
@@ -222,80 +238,144 @@ function btnCarregarListaProdutos(){
                         <label for="cod">Codigo de barras</label>
                         <input type="text" placeholder="3565.65564.3443-54" name="cod">
                     </div>   
-                    <button type="button" onclick="btnSalvar(id)">+ Salvar as alteracoes</button>                                                      
+                    <button type="button" id="btnEditar" class='active'>+ Salvar as alteracoes</button>                                                 
                 </section>
             </div>
             </div>                    
-          </div>            
-    </div>`
-    contador++;
+        </div>            
+    </div>
+    `;
+    return div.firstElementChild;
+}
+//<button type="button" class="btn btn-danger" onclick="removeProduto()">Deletar</button>    
+
+
+
+ 
+
+function carregaBtnsSalvar() {
+    const vecBtns = document.querySelectorAll('#add_container .itemlist #btnEditar');
+    vecBtns.forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+
+            let vecProdutos = JSON.parse(localStorage.getItem('ProdutosCriados'));
+            let infosEditar = vecProdutos[index];
+            
+            const paiItensEditar = btn.parentNode;
+            infosEditar.nomeProd = paiItensEditar.querySelector('#inputNomeItem').value;
+
+            vecProdutos[index] = infosEditar;
+
+            localStorage.setItem('ProdutosCriados', JSON.stringify(vecProdutos));
+
+        })
     })
-} 
+}
+
+
+function removeProduto() {
+        let vecProdutos = JSON.parse(localStorage.getItem('ProdutosCriados'));
+
+        const index = vecProdutos.findIndex(produto => produto.nomeProd);
+
+        if (index !== -1) {
+            vecProdutos.splice(index, 1);
+            localStorage.setItem('ProdutosCriados', JSON.stringify(vecProdutos));
+        } else {
+            console.error('Produto a remover não encontrado!');
+        }
+}
+
+
+
+
+
 
 
 //DESCOBRIR COMO LIMPAR O HTML ANTES DE ENVIAR UMA NOVA FUNCAO DE RENDERIZACAO
 /////CRIAR FUNCAO PARA EDITAR ITENS ÚNICOS, UTILIZANDO IDS UNICOS
 function CarregarCriarProdutos() {
     const blocoPai = document.getElementById('add_container')
-    return blocoPai.innerHTML += `<div class="testar">
-                
-    <div class="divtest">
-        
-        <div class="obterElementos">
-            <div class="ladoFotos">
-                <div class="foto">
-                    <label for="">Imagem do Produto</label>
-                    <img src="/assets/images/esponja.png" alt="">
-                    <button type="button">+ Adicionar imagem</button>
+    return blocoPai.innerHTML = `
+    <div class="testar">       
+        <div class="divtest">
+            <div class="obterElementos">
+                <div class="ladoFotos">
+                    <div class="foto">
+                        <label for="">Imagem do Produto</label>
+                        <img src="/assets/images/esponja.png" alt="">
+                        <button type="button">+ Adicionar imagem</button>
+                    </div>
+                    <div class="active"><button type="button" onclick="activedItem()">Ativar</button></div>
                 </div>
-                <div class="active"><button type="button" onclick="activedItem()">Ativar</button></div>
-            </div>
-            <div class="ladoDados">
-                <div class="entradas">
-                    <label for="nome">Nome do produto</label>
-                    <input type="text" placeholder="Bom brill (Eco)" name="nome">
+                <div class="ladoDados">
+                    <div class="entradas">
+                        <label for="nome">Nome do produto</label>
+                        <input type="text" placeholder="Bom brill (Eco)" name="nome">
+                    </div>
+                    <div class="entradas">
+                        <label for="marca">Marca</label>
+                        <input type="text" placeholder="Bom Bril" name="marca">
+                    </div>
+                    <div class="entradas">
+                        <label for="qnt">Quantidade</label>
+                        <input type="text" placeholder="10.000" name="qnt">
+                    </div>
+                    <div class="entradas">
+                        <label for="catg">Categoria</label>
+                        <select class="form-select categoria" aria-label="Default select example" style="width: 200px;">
+                            <option value="médio">médio</option>
+                            <option value="bom">bom</option>
+                            <option selected value="ótimo">ótimo</option>
+                        </select>
+                    </div>
+                    <div class="entradas">
+                        <label for="entry">Preço</label>
+                        
+                        <input type="text" placeholder="R$10.50" name="entry">
+                    </div>
+                    <div class="entradas">
+                        <label for="cod">Codigo de barras</label>
+                        <input type="text" placeholder="3565.65564.3443-54" name="cod">
+                    </div>
+                    <div class="entradas">
+                        <label for="forn">Fornecedor</label>
+                        <input type="text" placeholder="Bom brill Inc" name="forn">
+                    </div>
+                    <div class="entradas">
+                        <label for="tag">Tags</label>
+                        <input type="text" placeholder="Prod Bom" name="tag" class="tag">
+                    </div>
                 </div>
-                <div class="entradas">
-                    <label for="marca">Marca</label>
-                    <input type="text" placeholder="Bom Bril" name="marca">
-                </div>
-                <div class="entradas">
-                    <label for="qnt">Quantidade</label>
-                    <input type="text" placeholder="10.000" name="qnt">
-                </div>
-                <div class="entradas">
-                    <label for="catg">Categoria</label>
-                    <select class="form-select categoria" aria-label="Default select example" style="width: 200px;">
-                        <option value="médio">médio</option>
-                        <option value="bom">bom</option>
-                        <option selected value="ótimo">ótimo</option>
-                    </select>
-                </div>
-                <div class="entradas">
-                    <label for="entry">Preço</label>
-                    
-                    <input type="text" placeholder="R$10.50" name="entry">
-                </div>
-                <div class="entradas">
-                    <label for="cod">Codigo de barras</label>
-                    <input type="text" placeholder="3565.65564.3443-54" name="cod">
-                </div>
-                <div class="entradas">
-                    <label for="forn">Fornecedor</label>
-                    <input type="text" placeholder="Bom brill Inc" name="forn">
-                </div>
-                <div class="entradas">
-                    <label for="tag">Tags</label>
-                    <input type="text" placeholder="Prod Bom" name="tag" class="tag">
-                </div>
-            </div>
-        </div>  
-        <button type="button" class="btn-close " aria-label="Close"></button>                  
-    </div>                
-</div> 
-<div class="botoes">
-    <div>
-        <button type="button" class="btn btn-primary" onclick="recebeDados()">Criar</button>
-    </div>
-</div>`
+            </div>  
+            <button type="button" class="btn-close " aria-label="Close"></button>                  
+        </div>                
+    </div> 
+    <div class="botoes">
+        <div>
+            <button type="button" class="btn btn-primary" onclick="recebeDados()">Criar</button>           
+        </div>
+    </div>`
 }
+
+
+
+
+
+
+
+function editarItem() {  
+    let conv = JSON.parse(localStorage.getItem('ProdutosCriados'));
+    //let id = conv.length
+    let id = conv.quantidadeProd
+    console.log(id);
+    //console.log(conv);
+}
+
+
+// document.querySelector('.active').addEventListener('click', (e) => {
+//     const vecLocal = localStorage.getItem('ProdutosCriados');
+//     let conv = JSON.parse(vecLocal);
+//     let listaNova = conv.find(e => e.nomeProd)
+//     console.log(listaNova);
+// })

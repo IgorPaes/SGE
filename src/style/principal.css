@@ -537,9 +537,8 @@ h1, h2, h3, h4 {
 }
 .itemlist{
     display: grid;
-    grid-template-columns: 1.7fr 3fr 30px;
+    grid-template-columns: min-content 3fr 30px;
     width: 90%;
-    height: 7vh;
     border-bottom: 2px #2C2C2C solid;
     align-items: center;
 
@@ -551,7 +550,6 @@ h1, h2, h3, h4 {
 }
 
 .imageProd > .vazio1{
-    width: 50%;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -593,14 +591,9 @@ h1, h2, h3, h4 {
 }
 
 .container-card-content{
-    width: 1700px;
-    height: 20vh;
+    min-width: 100%;
     display: grid;
-    grid-template-columns: 1fr 3fr;
-}
-
-.card.card-body{
-    width: 1735px;
+    grid-template-columns: .5fr 3fr;
 }
 
 .content-card{
@@ -611,10 +604,10 @@ h1, h2, h3, h4 {
 .sect-image{
     height: 60%;
     width: 100%;
-    padding-left: 25%;
+    padding-left: 10%;
 }
 .sect-image > img {
-    width:50%;
+    width:100%;
     height: 100%;
 }
 
@@ -646,4 +639,10 @@ h1, h2, h3, h4 {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+}
+
+.bloco_edit {
+
+    grid-column: 2;
+
 }
