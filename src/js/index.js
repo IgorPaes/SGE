@@ -62,7 +62,6 @@ function recebeDados() {
     }
 
     if(valoresProd.length > 1) {
-
         Produto.nomeProd = valoresProd[0];
         Produto.marcaProd = valoresProd[1];
         Produto.quantidadeProd = valoresProd[2];
@@ -147,9 +146,7 @@ function removeProduto() {
     const vecBtns = document.querySelectorAll('#add_container .itemlist #btnDeletar');
     vecBtns.forEach((btn, index) => {
         btn.addEventListener('click', () => {
-
             let vecProdutos = JSON.parse(localStorage.getItem('ProdutosCriados'));
-            
             vecProdutos.splice(index, 1);
             localStorage.setItem('ProdutosCriados', JSON.stringify(vecProdutos));
             btnCarregarListaProdutos()
@@ -188,7 +185,8 @@ function adicionarQuantidade() {
             vecProdutos[index] = obj
             console.log( vecProdutos[index])
             localStorage.setItem('ProdutosCriados', JSON.stringify(vecProdutos));
-            btnCarregarListaProdutos()
+            btnCarregarListaProdutos();
+
         }
      
     )})
@@ -225,8 +223,7 @@ function criaItemLista(collapseId, item) {
             </div>
         </section>
         </section>  
-       
-        
+               
         <p class="d-inline-flex gap-1">
         <button id="btnDeletar" class="btn btn-danger">D </button>
             <a class="btn btn-primary" data-bs-toggle="collapse" href="#${collapseId}" role="button" aria-expanded="false" aria-controls="${collapseId}">
