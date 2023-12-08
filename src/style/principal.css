@@ -99,6 +99,12 @@ h1, h2, h3, h4 {
 
 }
 
+.main_container #add_container {
+
+    padding: 2rem;
+
+}
+
 .container_topo .bloco_pesquisa {
 
     display: flex;
@@ -454,7 +460,7 @@ h1, h2, h3, h4 {
     width: 720px;
     height: 392px;
     display: grid;
-    grid-template-columns: 2fr 3fr;
+    grid-template-columns: 0 3fr;
     gap: 3%;
     border-radius: 8px;
     margin: 2%;
