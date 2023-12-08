@@ -15,10 +15,6 @@ document.getElementById('btnTelaProdutos').addEventListener('click', () => {
     btnCarregarListaProdutos();
 })
 
-document.getElementById('recebeDados').addEventListener('click', () => {
-    recebeDados();
-});
-
 localStorage.setItem('activedItem', '0');
 // Função para mudar o número armazenado no localStorage
 function activedItem() {
@@ -289,6 +285,9 @@ function criaItemLista(collapseId, item) {
 
 function CarregarCriarProdutos() {
     const blocoPai = document.getElementById('add_container');
+    document.getElementById('recebeDados').addEventListener('click', () => {
+        recebeDados();
+    });
     return blocoPai.innerHTML = `
     <div class="testar">       
         <div class="divtest">
